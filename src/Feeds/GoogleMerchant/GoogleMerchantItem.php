@@ -68,6 +68,9 @@
 		/** @var string|NULL */
 		private $shippingLabel;
 
+		/** @var string|NULL */
+		private $googleCategory;
+
 
 		/**
 		 * @return string|int
@@ -377,6 +380,23 @@
 			return $this;
 		}
 
+		/**
+		 * @return string|NULL
+		 */
+		public function getGoogleCategory()
+		{
+			return $this->googleCategory;
+		}
+
+		/**
+		 * @param string $googleCategory
+		 * @return self
+		 */
+		public function setGoogleCategory($googleCategory)
+		{
+			$this->googleCategory = $googleCategory;
+			return $this;
+		}
 
 		/**
 		 * @return bool

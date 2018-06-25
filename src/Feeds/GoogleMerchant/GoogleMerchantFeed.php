@@ -182,8 +182,14 @@
 					'g:shipping_label' => $item->getShippingLabel(),
 
 					// identifiers
-					'g:identifier_exists' => !$item->hasIdentifiers() ? 'no' : NULL,
+					'g:identifier_exists' => !$item->hasIdentifiers() ? 'no' : NULL
 				));
+
+				if($item->getGoogleCategory()) {
+					Helpers::writeXml($output, array(
+						'g:google_product_category' => $item->getGoogleCategory()
+					));
+				}
 
 				$output->output("</entry>\n");
 			}
