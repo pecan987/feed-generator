@@ -192,7 +192,7 @@
 				}
 				if($item->getProductType()) {
 					Helpers::writeXml($output, array(
-						'g:product_type' => $item->getGoogleCategory()
+						'g:product_type' => $item->getProductType()
 					));
 				}
 
