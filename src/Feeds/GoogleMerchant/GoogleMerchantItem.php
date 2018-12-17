@@ -71,6 +71,9 @@
 		/** @var string|NULL */
 		private $googleCategory;
 
+		/** @var string|NULL */
+		private $productType;
+
 
 		/**
 		 * @return string|int
@@ -397,6 +400,22 @@
 			$this->googleCategory = $googleCategory;
 			return $this;
 		}
+
+		/**
+		 * @return NULL|string
+		 */
+		public function getProductType()
+		{
+			return $this->productType;
+		}
+
+		public function setProductType($productType)
+		{
+			$this->productType = $productType;
+			return $this;
+		}
+
+
 
 		/**
 		 * @return bool

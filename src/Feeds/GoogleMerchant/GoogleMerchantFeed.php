@@ -190,6 +190,12 @@
 						'g:google_product_category' => $item->getGoogleCategory()
 					));
 				}
+				if($item->getProductType()) {
+					Helpers::writeXml($output, array(
+						'g:product_type' => $item->getGoogleCategory()
+					));
+				}
+
 
 				$output->output("</entry>\n");
 			}
