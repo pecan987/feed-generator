@@ -180,7 +180,7 @@ class GoogleMerchantFeed extends Feed
 				'g:shipping_label' => $item->getShippingLabel(),
 
 				// identifiers
-				'g:identifier_exists' => !$item->hasIdentifiers() ? 'no' : null
+				'g:identifier_exists' => !$item->getEan() ? 'no' : null
 			));
 
 			$output->output('<g:shipping><g:price>'.$item->getShipping().'</g:price></g:shipping>');
