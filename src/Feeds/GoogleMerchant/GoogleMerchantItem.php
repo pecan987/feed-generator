@@ -44,6 +44,9 @@ class GoogleMerchantItem implements IFeedItem
     /** @var string|NULL */
     private $price;
 
+    /** @var string|NULL */
+	private $priceSale;
+
     /** @var string */
     private $condition = self::CONDITION_NEW;
 
@@ -223,6 +226,26 @@ class GoogleMerchantItem implements IFeedItem
         $this->price = $this->formatPrice($price, $currency);
         return $this;
     }
+
+	/**
+	 * @return string|NULL
+	 */
+	public function getPriceSale()
+	{
+		return $this->priceSale;
+	}
+
+
+	/**
+	 * @param float|string|int
+	 * @param string
+	 * @return self
+	 */
+	public function setPriceSale($price, $currency)
+	{
+		$this->priceSale = $this->formatPrice($price, $currency);
+		return $this;
+	}
 
 
     /**

@@ -156,7 +156,7 @@ class GoogleMerchantFeed extends Feed
 
 			$output->output("<entry>\n");
 
-			Helpers::writeXml($output, array(
+			$outputArray = [
 				'g:id' => $item->getId(),
 				'g:title' => $item->getTitle(),
 				'g:description' => $item->getDescription(),
@@ -181,7 +181,13 @@ class GoogleMerchantFeed extends Feed
 
 				// identifiers
 				'g:identifier_exists' => !$item->getEan() ? 'no' : null
-			));
+			];
+
+			if($item->getPriceSale()) {
+				$outputArray[] = ['g:sale_price' => $item->getPriceSale()];
+			}
+
+			Helpers::writeXml($output, $outputArray);
 
 			$output->output('<g:shipping><g:price>'.$item->getShipping().'</g:price></g:shipping>');
 
